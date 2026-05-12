@@ -1,6 +1,6 @@
 import unittest
-from lecture import test_palindrome_long
-from lecture import is_palindrome
+# Import the renamed helper and the main function
+from lecture import verify_palindrome_long, is_palindrome
 
 class MyTestCase(unittest.TestCase):
     def test_palindrome0(self):
@@ -20,5 +20,6 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(is_palindrome(s))
 
     def test_palindrome_long(self):
-        long_s = "1" * 2000
+        # This will now pass even with 2000 characters
+        long_s = "".join(["1" for _ in range(2000)])
         self.assertTrue(verify_palindrome_long(long_s))

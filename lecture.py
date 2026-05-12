@@ -1,38 +1,34 @@
 # PART 1
 def is_palindrome(s):
-    """
-    Check if a string is a palindrome.
-    Iterative approach used to avoid RecursionError on long strings.
-    """
-    # Standard Pythonic way: compares string to its reverse
+    # FIXED: Using a loop/slice to replace recursion.
+    # This prevents RecursionError on strings longer than 1000 chars.
     return s == s[::-1]
 
 def verify_palindrome_long(s):
-    """
-    Helper function to verify long strings. 
-    Renamed from 'test_...' to avoid pytest fixture errors.
-    """
+    # RENAMED from test_palindrome_long to avoid pytest fixture errors.
     return is_palindrome(s)
-
 
 # PART 2
 def is_small(a):
-    return a < 5
+    if a < 5:
+        return True
+    else:
+        return False
 
 def randomised_function():
     from random import randint
     a = randint(0, 10)
+
     if is_small(a):
         return 'software'
     else:
         return 'engineering'
 
-
 # PART 3 (Advanced Topic)
 def difficult_function(x, y):
-    # To cover the 'solved!' line, x must be 10 and y must be 0
+    # To cover this line, x should be 10 and y should be 0.
     if complex_math(x, y) < 0.000001:
-        return 'solved!'
+        return 'solved!'  
     else:
         return 'not yet'
 
@@ -46,4 +42,5 @@ def complex_math(x, y):
     return t1 + t2 + a + np.e
 
 if __name__ == '__main__':
+    # Calling this with (10, 0) makes the complex_math result 0
     print(difficult_function(10, 0))
