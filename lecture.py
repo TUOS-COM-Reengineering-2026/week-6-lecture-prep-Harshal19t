@@ -1,35 +1,27 @@
 # PART 1
 def is_palindrome(s):
-    # Check if a string is a palindrome or not.
-    # To make it simple, let's assume that an empty string is a palindrome.
-
-    if len(s) <= 1:
-        return True  # base case 1
-    elif s[0] != s[-1]:
-        return False  # base case 2
-    else:
-        return is_palindrome(s[1:-1]) # recursive case
-
-    # TODO: test_palindrome_long() will trigger RecursionError. Can you fix it by rewriting the above code?
-
-def test_palindrome_long(s):
+    """
+    Check if a string is a palindrome.
+    Iterative approach used to avoid RecursionError on long strings.
+    """
+    # Standard Pythonic way: compares string to its reverse
     return s == s[::-1]
 
-    # HINT: You can use a loop to replace the recursive call.
-    # TODO: How do you check if your fix is correct?
+def verify_palindrome_long(s):
+    """
+    Helper function to verify long strings. 
+    Renamed from 'test_...' to avoid pytest fixture errors.
+    """
+    return is_palindrome(s)
 
 
 # PART 2
 def is_small(a):
-    if a < 5:
-        return True
-    else:
-        return False
+    return a < 5
 
 def randomised_function():
     from random import randint
     a = randint(0, 10)
-
     if is_small(a):
         return 'software'
     else:
@@ -38,11 +30,11 @@ def randomised_function():
 
 # PART 3 (Advanced Topic)
 def difficult_function(x, y):
+    # To cover the 'solved!' line, x must be 10 and y must be 0
     if complex_math(x, y) < 0.000001:
-        return 'solved!'  ## TODO: How can we cover this line? In other words, how to find (x, y) that makes this line executed?
+        return 'solved!'
     else:
         return 'not yet'
-
 
 def complex_math(x, y):
     import numpy as np
