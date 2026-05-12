@@ -1,11 +1,8 @@
 # PART 1
 def is_palindrome(s):
-    # FIXED: Using a loop/slice to replace recursion.
-    # This prevents RecursionError on strings longer than 1000 chars.
     return s == s[::-1]
 
 def verify_palindrome_long(s):
-    # RENAMED from test_palindrome_long to avoid pytest fixture errors.
     return is_palindrome(s)
 
 # PART 2
@@ -26,7 +23,6 @@ def randomised_function():
 
 # PART 3 (Advanced Topic)
 def difficult_function(x, y):
-    # To cover this line, x should be 10 and y should be 0.
     if complex_math(x, y) < 0.000001:
         return 'solved!'  
     else:
@@ -42,5 +38,4 @@ def complex_math(x, y):
     return t1 + t2 + a + np.e
 
 if __name__ == '__main__':
-    # Calling this with (10, 0) makes the complex_math result 0
     print(difficult_function(10, 0))
