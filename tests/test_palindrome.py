@@ -1,4 +1,5 @@
 import unittest
+from lecture import test_palindrome_long
 from lecture import is_palindrome
 
 class MyTestCase(unittest.TestCase):
@@ -20,4 +21,4 @@ class MyTestCase(unittest.TestCase):
 
     def test_palindrome_long(self):
        long_s = "".join(["1" for _ in range(2000)])
-       self.assertTrue(is_palindrome(long_s))  # this will trigger RecursionError if `is_palindrome` is not fixed
+       self.assertTrue(test_palindrome_long(long_s))  # this will trigger RecursionError if `is_palindrome` is not fixed

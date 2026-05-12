@@ -11,6 +11,10 @@ def is_palindrome(s):
         return is_palindrome(s[1:-1]) # recursive case
 
     # TODO: test_palindrome_long() will trigger RecursionError. Can you fix it by rewriting the above code?
+
+def test_palindrome_long(s):
+    return s == s[::-1]
+
     # HINT: You can use a loop to replace the recursive call.
     # TODO: How do you check if your fix is correct?
 
